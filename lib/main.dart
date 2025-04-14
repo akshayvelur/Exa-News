@@ -1,5 +1,5 @@
 import 'package:exa_news/core/presentation/screen/home_screen/bloc/home_bloc.dart';
-import 'package:exa_news/core/presentation/screen/home_screen/hoem_screen.dart';
+import 'package:exa_news/core/presentation/screen/home_screen/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

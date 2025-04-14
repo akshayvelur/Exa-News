@@ -27,7 +27,6 @@ class ScrollerNews extends StatefulWidget {
 class _ScrollerNewsState extends State<ScrollerNews> {
     ApiService _apiService = ApiService();
   final scrollController=ScrollController();
- late Article data;
   void initState() {
     // TODO: implement initState
     super.initState();
@@ -55,8 +54,8 @@ class _ScrollerNewsState extends State<ScrollerNews> {
                 itemCount:widget.isLoadingMore?snapshot.data!.length+1: snapshot.data!.length,controller: scrollController,
                 itemBuilder: (context, index) {
 
-                  if(index<snapshot.data!.length){
-                 data = snapshot.data![index];
+                  if(index<snapshot.data!.length){  
+                final data = snapshot.data![index];
                   String date = DateFormat(
                     'dd MMM yyyy',
                   ).format(data.publishedAt);

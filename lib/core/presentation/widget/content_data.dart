@@ -24,7 +24,7 @@ class Description extends StatelessWidget {
         fontSize: 14,
       ),
     ),
-                          );
+ );
   }
 }
 
