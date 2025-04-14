@@ -1,4 +1,5 @@
 
+import 'package:exa_news/core/presentation/utils/color/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -9,7 +10,7 @@ class HomeAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
+    return AppBar(backgroundColor: AppColor.clrwhite,
       title: Text("Exa News", style: GoogleFonts.bebasNeue(fontSize: 32,color: Colors.green)),
       actions: [
         IconButton(style: ButtonStyle(backgroundColor: WidgetStatePropertyAll(const Color.fromARGB(26, 180, 180, 180)))

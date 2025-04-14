@@ -18,7 +18,7 @@ Future<List<Article>> newsFetching()async{
     print("data fetched");
     try{
     final decodeData=jsonDecode(response.body)["articles"]as List;
-        print(decodeData);
+      //  print(decodeData);
 return decodeData.map((article)=>Article.fromJson(article)).toList();
     }catch(e){
     log(e.toString());
