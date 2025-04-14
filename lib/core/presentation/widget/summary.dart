@@ -27,7 +27,7 @@ class Summary extends StatelessWidget {
         Spacer()
         ,Padding(
           padding: const EdgeInsets.only(right: 10),
-          child: Text(date,style: GoogleFonts.roboto(fontSize: 12),),
+          child: Text(date,style: GoogleFonts.roboto(fontSize: 10),),
         )],
       ),
     );

@@ -14,24 +14,24 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class ScrollerNews extends StatefulWidget {
-  ScrollerNews({super.key, required this.newsData,required this.page});
+class SearchNews extends StatefulWidget {
+  SearchNews({super.key, required this.newsData,});
   late Future<List<Article>> newsData;
-  int page;
+  
   bool isLoadingMore=false;
 
   @override
-  State<ScrollerNews> createState() => _ScrollerNewsState();
+  State<SearchNews> createState() => _SearchNewsState();
 }
 
-class _ScrollerNewsState extends State<ScrollerNews> {
+class _SearchNewsState extends State<SearchNews> {
     ApiService _apiService = ApiService();
   final scrollController=ScrollController();
  late Article data;
   void initState() {
     // TODO: implement initState
     super.initState();
-    scrollController.addListener(_scrollListener);
+
   }
   @override
   Widget build(BuildContext context) {
@@ -111,22 +111,5 @@ class _ScrollerNewsState extends State<ScrollerNews> {
       },
     );
   }
-  void _scrollListener(){
-  
-    if(scrollController.position.pixels==scrollController.position.maxScrollExtent){
-  print(" call");
 
-
-  setState(() {
-    widget.isLoadingMore=true;
-  });
-    widget.page=widget.page+1;
-      _apiService.newsFetching(page: widget.page);
-    }else{
-       setState(() {
-    widget.isLoadingMore=false;
-  });
-      print("dontcall");
-    }
-  }
 }

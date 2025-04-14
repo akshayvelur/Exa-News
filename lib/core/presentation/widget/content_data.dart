@@ -71,14 +71,16 @@ class ImageCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
      
         child: 
-       CachedNetworkImage(imageUrl:"${data.urlToImage}" ,
-          height: 250,
-          fit: BoxFit.cover,
-          placeholder: (context, url) => Center(
-            child: CircularProgressIndicator(color: Colors.greenAccent,
-             ),
-          ),errorWidget: (context, url, error) => Center(child: Icon(Icons.error)),
-        ),
+       Center(
+         child: CachedNetworkImage(imageUrl:"${data.urlToImage}" ,
+            height: 250,
+            fit: BoxFit.cover,
+            placeholder: (context, url) => Center(
+              child: CircularProgressIndicator(color:AppColor. clrLightGreen,
+               ),
+            ),errorWidget: (context, url, error) => Center(child: Icon(Icons.error)),
+          ),
+       ),
       ),
                          );
   }
